@@ -1,0 +1,27 @@
+[
+	{
+		"question": "What is useState and how does it work in React?",
+		"answer": "useState is a React Hook that allows you to add state variables to functional components. It returns an array with two values: the current state and a function to update it. When you call the update function, React re-renders the component with the new state.",
+		"added_at": "2025-04-17"
+	},
+	{
+		"question": "What is the purpose of useEffect in React?",
+		"answer": "useEffect is a React Hook used for handling side effects in functional components. Common uses include fetching data, directly updating the DOM, setting up subscriptions, and cleaning up resources. It runs after the component renders, and you can control when it runs by passing dependencies.",
+		"added_at": "2023-01-20"
+	},
+	{
+		"question": "What is a custom hook in React and when should you use one?",
+		"answer": "A custom hook is a reusable function that starts with 'use' and can call other hooks inside it. You should use a custom hook when you want to share logic (such as form handling, fetching data, or animations) between multiple components without repeating code.",
+		"added_at": "2024-07-22"
+	},
+	{
+		"question": "Difference between controlled and uncontrolled components? Which one is better?",
+		"answer": "Controlled components have their form data managed by React state, making them predictable and easier to validate. Uncontrolled components store form data in the DOM itself and use refs to access it. Controlled components are generally considered better for most cases because they provide more control and consistency.",
+		"added_at": "2022-09-30"
+	},
+	{
+		"question": "Tell us something about useFormStatus() (explore and explain)",
+		"answer": "useFormStatus is a hook mainly used in React Server Components (RSC) with frameworks like Next.js. It helps track the status of a form submission (e.g., pending, success, or error). It allows you to show loading indicators or disable buttons while the form is submitting. It is especially useful for building smooth user experiences during async form actions.",
+		"added_at": "2025-10-31"
+	}
+]

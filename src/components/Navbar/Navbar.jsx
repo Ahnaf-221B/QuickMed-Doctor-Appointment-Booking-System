@@ -9,7 +9,7 @@ const Navbar = () => {
 				className={({ isActive }) =>
 					isActive
 						? "border-b-2 border-black text-black font-semibold pb-1"
-						: "text-gray-700 hover:text-green-500 pb-1"
+						: "text-gray-700 hover:text-blue-500 pb-1"
 				}
 			>
 				Home
@@ -19,7 +19,7 @@ const Navbar = () => {
 				className={({ isActive }) =>
 					isActive
 						? "border-b-2 border-black text-black font-semibold pb-1"
-						: "text-gray-700 hover:text-green-500 pb-1"
+						: "text-gray-700 hover:text-blue-500 pb-1"
 				}
 			>
 				My Booking
@@ -29,7 +29,7 @@ const Navbar = () => {
 				className={({ isActive }) =>
 					isActive
 						? "border-b-2 border-black text-black font-semibold pb-1"
-						: "text-gray-700 hover:text-green-500 pb-1"
+						: "text-gray-700 hover:text-blue-500 pb-1"
 				}
 			>
 				Blogs
@@ -39,7 +39,7 @@ const Navbar = () => {
 				className={({ isActive }) =>
 					isActive
 						? "border-b-2 border-black text-black font-semibold pb-1"
-						: "text-gray-700 hover:text-green-500 pb-1"
+						: "text-gray-700 hover:text-blue-500 pb-1"
 				}
 			>
 				Contact Us
@@ -76,13 +76,13 @@ const Navbar = () => {
 					</ul>
 				</div>
 
-				<div className="flex items-center">
+				<div className="flex items-center gap-2">
 					<img
 						src="/logo.png"
 						alt="Logo"
 						className="w-4 h-4 md:w-8 md:h-8 rounded-full"
 					/>
-					<a className="btn btn-ghost text-lg md:text-2xl">QuickMed</a>
+					<a className=" font-semibold text-lg md:text-2xl">QuickMed</a>
 				</div>
 			</div>
 
@@ -91,7 +91,7 @@ const Navbar = () => {
 			</div>
 
 			<div className="navbar-end ">
-				<a className="btn w-20 h-8 md:btn md:rounded-full text-[12px] bg-[#176AE5] md:bg-[#176AE5] rounded-full text-white md:text-white">
+				<a className="btn w-20 h-8 md:w-25 md:h-10 md:btn md:rounded-full text-[12px] bg-[#176AE5] md:bg-[#176AE5] rounded-full text-white md:text-white">
 					Emergency
 				</a>
 			</div>

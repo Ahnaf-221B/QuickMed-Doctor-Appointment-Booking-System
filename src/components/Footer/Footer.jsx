@@ -55,7 +55,7 @@ const Footer = () => {
 					alt="Logo"
 					className="w-6 h-6 md:w-8 md:h-8 rounded-full"
 				/>
-				<a className="btn btn-ghost text-lg md:text-2xl">QuickMed</a>
+				<a className="font-semibold text-lg md:text-2xl">QuickMed</a>
 			</div>
 			<div className="border-b-2 border-[#0F0F0F20] border-dashed md:w-3/4 pb-6">
 				<nav className="grid grid-flow-col gap-10  ">{links}</nav>
@@ -106,8 +106,7 @@ const Footer = () => {
 			</nav>
 			<aside>
 				<p>
-					Copyright © {new Date().getFullYear()} - All right reserved by ACME
-					Industries Ltd
+					Copyright © {new Date().getFullYear()} - All right reserved by QuickMed 
 				</p>
 			</aside>
 		</footer>
