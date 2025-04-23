@@ -3,25 +3,33 @@ import { createBrowserRouter } from "react-router";
 import Root from "../pages/Root/Root";
 import Blogs from "../pages/Blogs/Blogs";
 import Home from "../pages/Home/Home";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import Contact from "../pages/Contact/Contact";
 
 export const router = createBrowserRouter([
-
-    {
-        path: "/",
-        Component: Root,
-       
-            children: [
-            {
-                index: true,
-                path: "/",
-                Component: Home,
-
-            },
-            {
-                path: "/blogs",
-                Component: Blogs,
-                loader: () => fetch("/blogdata.json"),
-            }
-        ],
-    }
-])
+	{
+		path: "/",
+		Component: Root,
+		errorElement: <ErrorPage />,
+		children: [
+			{
+				index: true,
+				path: "/",
+				Component: Home,
+			},
+			{
+				path: "/blogs",
+				Component: Blogs,
+				loader: () => fetch("/blogdata.json"),
+			},
+			{
+				path: "/mybooking",
+			},
+			{
+				path: "/contact",
+				loader: () => new Promise((resolve) => setTimeout(resolve, 150)),
+				element: <Contact />,
+			},
+		],
+	},
+]);
