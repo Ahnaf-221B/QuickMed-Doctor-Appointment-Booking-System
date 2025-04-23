@@ -26,6 +26,10 @@ export const router = createBrowserRouter([
 			{
 				path: "/mybooking",
 			},
+            {
+                path: "/doctordetails/:id",
+                loader: ()=> fetch("/doctors.json")
+            },
 			{
 				path: "/contact",
 				loader: () => new Promise((resolve) => setTimeout(resolve, 150)),

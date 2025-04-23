@@ -1,7 +1,9 @@
 import React from 'react'
 import { FaRegRegistered } from "react-icons/fa";
+import { Link } from "react-router";
 const Doctor = ({doctor}) => {
     const {
+            id,
 			image,
 			name,
 			education,
@@ -18,7 +20,7 @@ const Doctor = ({doctor}) => {
 				<img className=" " src={image} alt="Shoes" />
 			</figure>
 			<div className="card-body">
-				<div className='flex  items-center gap-4'>
+				<div className="flex  items-center gap-4">
 					<span
 						className={`text-sm font-semibold px-3 py-2 rounded-full ${
 							isAvailable
@@ -46,9 +48,12 @@ const Doctor = ({doctor}) => {
 				</div>
 
 				<div>
-					<button className="btn btn-primary mt-4 w-full bg-white font-bold text-blue-700 rounded-full transition duration-300">
+					<Link
+						to={`/doctordetails/${id}`}
+						className="btn btn-primary mt-4 w-full bg-white font-bold text-blue-700 rounded-full transition duration-300"
+					>
 						View Details
-					</button>
+					</Link>
 				</div>
 			</div>
 		</div>
