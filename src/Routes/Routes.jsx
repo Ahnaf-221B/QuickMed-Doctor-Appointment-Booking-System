@@ -27,6 +27,7 @@ export const router = createBrowserRouter([
 			},
 			{
 				path: "/mybooking",
+				loader: () => new Promise((resolve) => setTimeout(resolve, 150)),
 				Component: Booking,
 			},
 			{
