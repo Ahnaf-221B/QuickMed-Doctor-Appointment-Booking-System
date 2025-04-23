@@ -3,7 +3,7 @@ import { FaRegRegistered } from "react-icons/fa";
 import { Link } from "react-router";
 const Doctor = ({doctor}) => {
     const {
-            id,
+            
 			image,
 			name,
 			education,
@@ -49,7 +49,7 @@ const Doctor = ({doctor}) => {
 
 				<div>
 					<Link
-						to={`/doctordetails/${id}`}
+						to={`/doctordetails/${registration_number}`}
 						className="btn btn-primary mt-4 w-full bg-white font-bold text-blue-700 rounded-full transition duration-300"
 					>
 						View Details

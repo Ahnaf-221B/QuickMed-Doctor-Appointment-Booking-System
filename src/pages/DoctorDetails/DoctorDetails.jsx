@@ -1,23 +1,60 @@
 import React from 'react';
-import { useLoaderData, useParams } from 'react-router';
+import { useLoaderData, useParams, useNavigate } from 'react-router';
 import { BiRegistered } from "react-icons/bi";
 import { MdErrorOutline } from "react-icons/md";
 import { Link } from 'react-router';
+import { Navigate } from 'react-router';
 
 const DoctorDetails = () => {
-    const { id } = useParams();
-    const convertedId = parseInt(id);
-    console.log(convertedId);
+	const { registration_number } = useParams();
+	const navigate = useNavigate();
+ 
+    
     const data = useLoaderData();
-    const targetedDoctor = data.find((doctor) => doctor.id === convertedId);
+    const targetedDoctor = data.find((doctor) => doctor.registration_number === registration_number);
 
-    const { image, name, education, speciality, registration_number, hospital, available_days, fee } = targetedDoctor;
+    const { image, name, education, speciality,  hospital, available_days, fee } = targetedDoctor;
 
     const today = new Date().toLocaleString('en-US', { weekday: 'long' });
     const isAvailable = available_days.includes(today);
 
+
+   const handleBookAppointment = () => {
+			
+			const existingBookings =
+				JSON.parse(localStorage.getItem("myBookings")) || [];
+
+			
+			const isAlreadyBooked = existingBookings.some(
+				(booking) => booking.id === targetedDoctor.id
+			);
+
+			if (isAlreadyBooked) {
+				alert("You have already booked this doctor.");
+				return;
+			}
+
+			// Create a new booking object
+			const bookingData = {
+				id: targetedDoctor.id,
+				name: targetedDoctor.name,
+				education: targetedDoctor.education,
+				speciality: targetedDoctor.speciality,
+				fee: targetedDoctor.fee,
+				hospital: targetedDoctor.hospital,
+			};
+
+			// Add the new booking to the existing bookings array
+			const updatedBookings = [...existingBookings, bookingData];
+
+			// Save the updated bookings array to localStorage
+			localStorage.setItem("myBookings", JSON.stringify(updatedBookings));
+
+			// Navigate to the "My Booking" page
+			navigate("/mybooking");
+		};
     return (
-			<div className="bg-[#EFEFEF] lg:px-28 px-5 lg:py-10 py-5">
+			<div className=" lg:px-28 px-5 lg:py-10 py-5 bg-gray-50">
 				<div className="text-center space-y-3 lg:space-y-5 bg-white rounded-2xl lg:p-10 p-5">
 					<h1 className="text-3xl font-bold">Doctor’s Profile Details</h1>
 					<p className="opacity-30 font-bold">
@@ -55,7 +92,10 @@ const DoctorDetails = () => {
 							<p className="flex flex-col md:flex-row items-center pb-3 border-b-2 border-dashed border-gray-200 gap-2">
 								<span className="font-bold text-lg ">Availability:</span>
 								{available_days.map((availableDay, index) => (
-									<button key={index} className="px-2 py-1 mr-4 bg-[#FFA00020] rounded-full text-[#FFA000]">
+									<button
+										key={index}
+										className="px-2 py-1 mr-4 bg-[#FFA00020] rounded-full text-[#FFA000]"
+									>
 										{availableDay}
 									</button>
 								))}
@@ -107,7 +147,11 @@ const DoctorDetails = () => {
 						</p>
 					</div>
 
-					<button  className="btn transition rounded-full bg-blue-600 text-white hover:bg-white hover:text-blue-600 duration-300 hover:border-2 hover:border-blue-600">
+					<button
+						disabled={!isAvailable}
+                        onClick={handleBookAppointment}
+						className="btn transition rounded-full bg-blue-600 text-white hover:bg-white hover:text-blue-600 duration-300 hover:border-2 hover:border-blue-600"
+					>
 						Book Appointment Now
 					</button>
 				</div>

@@ -7,7 +7,7 @@ const Root = () => {
 	    const navigation = useNavigation();
 			const isLoading = navigation.state === "loading";
 	return (
-		<div className="">
+		<div className="bg-gray-50">
 			<Navbar />
 			{isLoading && (
 				<div className="w-full flex justify-center bg-[#EFEFEF] items-center py-10">

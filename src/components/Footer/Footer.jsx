@@ -48,7 +48,7 @@ const Footer = () => {
 		</>
 	);
 	return (
-		<footer className="footer footer-horizontal footer-center bg-base-200 text-base-content rounded p-10">
+		<footer className="footer footer-horizontal footer-center text-base-content rounded p-10 bg-white mt-10">
 			<div className="flex items-center ">
 				<img
 					src="/logo.png"
