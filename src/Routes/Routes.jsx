@@ -5,6 +5,7 @@ import Blogs from "../pages/Blogs/Blogs";
 import Home from "../pages/Home/Home";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Contact from "../pages/Contact/Contact";
+import DoctorDetails from "../pages/DoctorDetails/DoctorDetails";
 
 export const router = createBrowserRouter([
 	{
@@ -16,7 +17,7 @@ export const router = createBrowserRouter([
 				index: true,
 				path: "/",
 				Component: Home,
-                loader: ()=> fetch("/doctors.json"),
+				loader: () => fetch("/doctors.json"),
 			},
 			{
 				path: "/blogs",
@@ -26,10 +27,11 @@ export const router = createBrowserRouter([
 			{
 				path: "/mybooking",
 			},
-            {
-                path: "/doctordetails/:id",
-                loader: ()=> fetch("/doctors.json")
-            },
+			{
+				path: "/doctordetails/:id",
+				Component: DoctorDetails,
+				loader: () => fetch("/doctors.json"),
+			},
 			{
 				path: "/contact",
 				loader: () => new Promise((resolve) => setTimeout(resolve, 150)),
