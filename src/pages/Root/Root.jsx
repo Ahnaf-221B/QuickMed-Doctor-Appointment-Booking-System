@@ -2,12 +2,14 @@ import React from "react";
 import { Outlet, useNavigation } from "react-router";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+import ScrollToTop from "../../components/Scroll/Scroll";
 
 const Root = () => {
 	    const navigation = useNavigation();
 			const isLoading = navigation.state === "loading";
 	return (
 		<div className="bg-gray-50">
+			<ScrollToTop />
 			<Navbar />
 			{isLoading && (
 				<div className="w-full flex justify-center bg-[#EFEFEF] items-center py-10">

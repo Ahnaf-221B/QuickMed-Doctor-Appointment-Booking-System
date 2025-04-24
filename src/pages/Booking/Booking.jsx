@@ -10,6 +10,9 @@ import {
 	CartesianGrid,
 	Cell,
 } from "recharts";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Slide } from "react-toastify";
 
 const getPath = (x, y, width, height) => {
 	return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${
@@ -29,7 +32,7 @@ const TriangleBar = (props) => {
 };
 
 const Booking = () => {
-	const [bookingData, setBookingData] = useState(
+	const [] = useState(
 		JSON.parse(localStorage.getItem("myBooking"))
 	);
 
@@ -42,18 +45,34 @@ const Booking = () => {
 	}, []);
 
 	const handleCancelAppointment = (id) => {
-		// Remove the selected booking from the array
 		const updatedBookings = bookings.filter((booking) => booking.id !== id);
 
-		// Update localStorage and state
-		localStorage.setItem("myBookings", JSON.stringify(updatedBookings));
-		setBookings(updatedBookings);
+		// Show toast immediately
+		toast.error("Appointment Cancelled Successfully", {
+			position: "top-right",
+			autoClose: 3000,
+			hideProgressBar: false,
+			closeOnClick: false,
+			pauseOnHover: true,
+			draggable: true,
+			progress: undefined,
+			theme: "light",
+			transition: Slide,
+		});
+
+		// Delay update so toast has time to show
+		setTimeout(() => {
+			localStorage.setItem("myBookings", JSON.stringify(updatedBookings));
+			setBookings(updatedBookings);
+		}, 2000); 
 	};
 
 	const chartData = bookings.map((booking) => ({
 		name: booking.name,
 		fee: booking.fee,
 	}));
+
+    
 
 	const colors = ["#8884d8", "#82ca9d", "#ffc658", "#ff8042"];
 
@@ -72,11 +91,26 @@ const Booking = () => {
 	}
 
 	return (
-		<div className="p-5 bg-gray-50 px-32">
+		<>
+		<ToastContainer
+					position="top-right"
+					autoClose={5000}
+					hideProgressBar={false}
+					newestOnTop={false}
+					closeOnClick={false}
+					rtl={false}
+					pauseOnFocusLoss
+					draggable
+					pauseOnHover
+					theme="light"
+					transition={Slide}
+				/>
+				<div className="p-5 bg-gray-50 px-32">
 			<div className="mb-10">
 				<h2 className="text-2xl font-bold text-center mb-5">
 					Appointment Statistics
 				</h2>
+				
 				<ResponsiveContainer width="100%" height={300}>
 					<BarChart
 						data={chartData}
@@ -106,7 +140,7 @@ const Booking = () => {
 					</BarChart>
 				</ResponsiveContainer>
 			</div>
-
+			
 			<div className="text-center space-y-3 lg:space-y-5 rounded-2xl lg:p-10 p-5">
 				<h1 className="text-4xl font-bold">My Appointments</h1>
 				<p>
@@ -144,6 +178,8 @@ const Booking = () => {
 				</div>
 			))}
 		</div>
+		</>
+		
 	);
 };
 
