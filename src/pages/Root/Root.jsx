@@ -21,6 +21,7 @@ const Root = () => {
 			</main>
 			
 			  {location.pathname !== "/contact" && <Footer />}
+			 
 		</div>
 	);
 };

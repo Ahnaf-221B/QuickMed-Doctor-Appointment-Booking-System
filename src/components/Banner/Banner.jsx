@@ -3,15 +3,15 @@ import doc2 from "../../assets/doctor-img-2.jpg";
 
 const Banner = () => {
 	return (
-		<div className="min-h-screen bg-gray-50 py-16 md:py-12">
+		<div className="min-h-screen bg-gray-50 py-12 md:py-6">
 			{/* Main content - lowered with top padding */}
-			<div className="max-w-7xl mx-auto border-3 border-white md:p-6  rounded-lg shadow-md ">
+			<div className="max-w-7xl md:max-w-[1400px] mx-auto border-4 border-white md:p-6  rounded-xl shadow-lg ">
 				{/* Hero section */}
 				<div className="text-center mb-12 mt-12">
 					<h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
 						Dependable Care, Backed by Trusted <br /> Professionals.
 					</h1>
-					<p className="text-gray-600 max-w-3xl mx-auto mb-8 text-sm md:text-base">
+					<p className="text-gray-600 md:max-w-3xl mx-auto mb-8 text-sm md:text-base">
 						Our platform connects you with verified, experienced doctors across
 						various specialties — all at your convenience. Whether it's a
 						routine checkup or urgent consultation, book appointments in minutes
@@ -38,14 +38,14 @@ const Banner = () => {
 					{/* First doctor placeholder */}
 					<div className="bg-gray-100 rounded-lg overflow-hidden aspect-video flex items-center justify-center">
 						<div className="text-gray-400">
-                            <img src={doc1} alt="" />
+                            <img  src={doc1} alt="" />
                         </div>
 					</div>
 
 					{/* Second doctor placeholder */}
 					<div className="bg-gray-100 rounded-lg overflow-hidden aspect-video flex items-center justify-center  ">
 						<div className="text-gray-400">
-                            <img src={doc2} alt="" />
+                            <img className="md:h-[350px] md:w-[620px] h-[250px] w-[450px]" src={doc2} alt="" />
                         </div>
 					</div>
 				</div>

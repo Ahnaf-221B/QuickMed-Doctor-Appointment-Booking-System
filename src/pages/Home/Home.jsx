@@ -17,14 +17,21 @@ const Home = () => {
 		<div className="bg-gray-50 ">
 			<Banner />
 			<div className="flex items-center justify-center flex-col my-10  ">
-				<h1 className="font-bold text-3xl ">Our Best Doctors</h1>
-				<p className="text-center text-gray-500 my-4 pl-42 pr-42 font-semibold mt-10 mb-10">
+				<h1 className="font-bold text-4xl ">Our Best Doctors</h1>
+				<p className="text-center text-gray-500 my-4 md:pl-42 md:pr-42 font-semibold mt-7 mb-10">
 					Our platform connects you with verified, experienced doctors across
 					various specialties — all at your convenience. Whether it's a routine
 					checkup or urgent consultation, book appointments in minutes and
 					receive quality care you can trust.
 				</p>
 				<Doctors doctors={doctors} />
+			</div>
+			<div className="flex items-center justify-center flex-col my-20">
+				<h1 className="font-bold text-4xl mb-5">We Provide Best Medical Services</h1>
+				<p className="text-center text-gray-500   font-semibold ">
+					Our platform connects you with verified, experienced doctors across
+					various specialties — all at your convenience.{" "}
+				</p>
 			</div>
 			<div className="w-full max-w-7xl mx-auto px-12 py- rounded-lg">
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

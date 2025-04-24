@@ -64,7 +64,7 @@ const Footer = () => {
 			<nav>
 				<div className="grid grid-flow-col gap-20">
 					<a
-						href="https://facebook.com"
+						href="https://www.facebook.com/share/19GHafPMAB/?mibextid=qi2Omg"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
@@ -75,7 +75,7 @@ const Footer = () => {
 					</a>
 
 					<a
-						href="https://linkedin.com"
+						href="https://www.linkedin.com/in/mostafa-ahnaf-hossain/"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
@@ -87,7 +87,7 @@ const Footer = () => {
 
 					{/* Twitter */}
 					<a
-						href="https://twitter.com"
+						href="https://x.com/MostafaAhnaf_?t=RjcakY1qxqgbvzF7EzzfSA&s=09"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
@@ -106,7 +106,8 @@ const Footer = () => {
 			</nav>
 			<aside>
 				<p>
-					Copyright © {new Date().getFullYear()} - All right reserved by QuickMed 
+					Copyright © {new Date().getFullYear()} - All right reserved by
+					QuickMed
 				</p>
 			</aside>
 		</footer>

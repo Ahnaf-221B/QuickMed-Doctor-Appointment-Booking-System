@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router";
-
+import { Link } from "react-router";
 const Navbar = () => {
 	const links = (
 		<>
@@ -8,7 +8,7 @@ const Navbar = () => {
 				to="/"
 				className={({ isActive }) =>
 					isActive
-						? "border-b-2 border-black text-black font-semibold pb-1"
+						? "border-b-3 border-black text-black font-semibold pb-1"
 						: "text-gray-700 hover:text-blue-500 pb-1"
 				}
 			>
@@ -18,7 +18,7 @@ const Navbar = () => {
 				to="/mybooking"
 				className={({ isActive }) =>
 					isActive
-						? "border-b-2 border-black text-black font-semibold pb-1"
+						? "border-b-3 border-black text-black font-semibold pb-1"
 						: "text-gray-700 hover:text-blue-500 pb-1"
 				}
 			>
@@ -28,7 +28,7 @@ const Navbar = () => {
 				to="/blogs"
 				className={({ isActive }) =>
 					isActive
-						? "border-b-2 border-black text-black font-semibold pb-1"
+						? "border-b-3 border-black text-black font-semibold pb-1"
 						: "text-gray-700 hover:text-blue-500 pb-1"
 				}
 			>
@@ -38,7 +38,7 @@ const Navbar = () => {
 				to="/contact"
 				className={({ isActive }) =>
 					isActive
-						? "border-b-2 border-black text-black font-semibold pb-1"
+						? "border-b-3 border-black text-black font-semibold pb-1"
 						: "text-gray-700 hover:text-blue-500 pb-1"
 				}
 			>
@@ -48,7 +48,7 @@ const Navbar = () => {
 	);
 
 	return (
-		<div className="navbar  border-b-2 border-[#0F0F0F30] px-6 lg:px-12 bg-gray-50">
+		<div className="navbar  border-[#0F0F0F30] px-6 lg:px-36 bg-gray-50">
 			<div className="navbar-start">
 				<div className="dropdown">
 					<div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -91,9 +91,9 @@ const Navbar = () => {
 			</div>
 
 			<div className="navbar-end ">
-				<a className="btn w-20 h-8 md:w-25 md:h-10 md:btn md:rounded-full text-[12px] bg-[#176AE5] md:bg-[#176AE5] rounded-full text-white md:text-white">
+				<Link to="/" className="btn w-20 h-8 md:w-25 md:h-10 md:btn md:rounded-full text-[12px] bg-[#176AE5] md:bg-[#176AE5] rounded-full text-white md:text-white">
 					Emergency
-				</a>
+				</Link>
 			</div>
 		</div>
 	);
