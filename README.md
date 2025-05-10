@@ -1,4 +1,4 @@
-# Medical Appointment Booking System
+# Doctor Appointment Booking System
 
 ## Project Name:
 **QuickMed - Doctor Booking System**
