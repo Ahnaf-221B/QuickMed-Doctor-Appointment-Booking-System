@@ -1,7 +1,7 @@
 # Doctor Appointment Booking System
 
 ## Project Name:
-**QuickMed - Doctor Booking System**
+**QuickMed - Doctor Appointment Booking System**
 
 ## Purpose:
 QuickMed is a web application designed to simplify the process of booking medical appointments with doctors. The system features a responsive design, real-time notifications, and interactive charts for appointment statistics. Users can book, manage, and track their appointments seamlessly.
